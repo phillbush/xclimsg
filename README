@@ -49,6 +49,13 @@ ENVIRONMENT
        DISPLAY
               The display to send the client message event.
 
+INSTALLATION
+       To build xclimsg, run the following command.
+
+              $ cc -I/usr/X11R6/include -L/usr/X11R6/lib -o xclimsg xclimsg.c -lX11
+
+       To install xclimsg, copy the binary to somewhere in $PATH
+
 EXAMPLES
        The following example closes a window with ID equal to 0x0560000e.
 
