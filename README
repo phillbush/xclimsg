@@ -64,7 +64,7 @@ EXAMPLES
        The following example hides (minimizes) a window with ID equal to
        0x0560000e.
 
-              $ ./xclimsg -mw 0x0560000e _NET_WM_STATE 1 _NET_WM_STATE_HIDDEN 0
+              $ ./xclimsg -mw 0x0560000e _NET_WM_STATE 1 _NET_WM_STATE_HIDDEN None 0
 
 SEE ALSO
        XSendEvent(3)

@@ -12,7 +12,7 @@ static Display *dpy;
 static void
 usage(void)
 {
-	fprintf(stderr, "usage:xclimsg [-mp] [-t window] [-w window] type data...\n");
+	fprintf(stderr, "usage: xclimsg [-mp] [-t window] [-w window] type data...\n");
 	exit(1);
 }
 
@@ -23,9 +23,11 @@ getdata(char *s)
 	long n;
 	char *endp;
 
+	if (strcmp(s, "None") == 0)
+		return None;
 	if (strcmp(s, "CurrentTime") == 0)
 		return CurrentTime;
-	n = strtol(s, &endp, 0);
+	n = strtoul(s, &endp, 0);
 	if (endp == s || *endp != '\0')
 		return (long)XInternAtom(dpy, s, False);
 	return n;
